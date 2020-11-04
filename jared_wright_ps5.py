@@ -158,37 +158,3 @@ print("Decision Tree score: {:}".format(grid_search_dtree.score(X_test, y_test))
 
 #Pruning the tree does improve test MSE because the best parameter of ccp_alpha is non-zero
 
-"""We will now use boosting to predict Log Salary in the `Hitters` data set.  
-(a) Format the data appropriately for this analysis. Use 200 observations in your training set.  
-(b) Perform boosting on the training set with 1,000 trees for a range of values of the shrinkage parameter λ. Produce a plot with different shrinkage values on the x-axis and the corresponding training set MSE on the y-axis. Add a curve with different shrinkage values on the x-axis and the corresponding test set MSE on the y-axis. The shrinkage parameter is often referred to as the learning rate   
-(c) Compare the test MSE of boosting to the test MSE of two of the penalized regression approaches that we discussed  
-(d) Which variables appear to be the most important predictors in the boosted model?  
-(e) The default for base estimator is a Decision Tree with a maximum depth of 3. Is that the optimal depth? Justify your response.  
-(f) Now that the boosting model is tuned, let's compare the results to bagging and random forests. Report test errors for your models and discuss how they compare.
-"""
-
-
-
-"""In this problem, you will use support vector approaches in order to predict whether a given car gets high or low gas mileage based on the Auto data set.  
-
-#### NOTE: SVM algortihms will often take longer than other models to train, particularly when doing cross validation
-
-(a) Create a binary variable that takes on a 1 for cars with gas mileage above the median, and a 0 for cars with gas mileage below the median.  
-(b) Fit a support vector classifier to the data with various values of cost, in order to predict whether a car gets high or low gas mileage. Report the cross-validation errors associated with different values of this parameter. Comment on your results.  
-(c) Make an ROC curve for your model. The module scikitplot has a nice function you might want to use but you should eb able to make it on your own or another module if you desire.
-"""
-
-
-
-"""Below there are some generated datasets of varying structure that you will classifying is SVMs, plotting the data to see what it looks like will likey be helpful. Find the basis kernel that does best job classifying each of them. Because the data is two dimensional, it might be nice to use a library like mlxtend which has a function that will display decision regions form an svm using a one of their functions."""
-
-from sklearn.datasets import make_moons
-x, y = make_moons(n_samples=100, shuffle=True, noise=1/10, random_state=123)
-
-from sklearn.datasets import make_circles
-x, y = make_circles(n_samples=100, shuffle=False, noise=1/50, random_state=123, factor=0.6)
-
-from sklearn.datasets import make_blobs
-x, y = make_blobs(n_samples=100, n_features=2, centers=None, cluster_std=2.0,
-           center_box=(-10.0, 10.0), shuffle=True, random_state=10)
-
